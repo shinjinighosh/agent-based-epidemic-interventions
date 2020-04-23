@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from mesa import Agent, Model
 from mesa.time import RandomActivation
 
@@ -8,8 +10,7 @@ class CoronaAgent(Agent):
         self.level_of_infection = 0
 
     def step(self):
-        # The agent's step will go here.
-        pass
+        print(self.unique_id, end=' ') 
 
 class CoronaModel(Model):
     """A model with some number of agents."""
