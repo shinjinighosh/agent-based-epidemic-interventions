@@ -2,6 +2,7 @@
 
 from CoronaModel import CoronaModel
 import matplotlib.pyplot as plt
+import numpy as np
 
 # test_model = CoronaModel(10)
 
@@ -27,4 +28,18 @@ for j in range(100):
     print("Run: %d" %j, all_infection_levels[-1])
 
 plt.hist(all_infection_levels, bins=range(int(max(all_infection_levels))+1))
+plt.show()
+
+grid_model = CoronaModel(50, 10, 10)
+for i in range(20):
+    print("Step: %d" %(i))
+    model.step()
+
+agent_counts = np.zeros((model.grid.width, model.grid.height))
+for cell in model.grid.coord_iter():
+    cell_content, x, y = cell
+    agent_count = len(cell_content)
+    agent_counts[x][y] = agent_count
+plt.imshow(agent_counts, interpolation='nearest')
+plt.colorbar()
 plt.show()
