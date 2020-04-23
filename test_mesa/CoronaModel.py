@@ -16,7 +16,7 @@ class CoronaAgent(Agent):
         other_agent = self.random.choice(self.model.schedule.agents)
         other_agent.level_of_infection += random.random() * self.level_of_infection
         # self.level_of_infection += random.random() * self.level_of_infection
-        print(self.unique_id, "%.3f" % self.level_of_infection, end=';\t')
+        # print(self.unique_id, "%.3f" % self.level_of_infection, end=';\t')
 
 class CoronaModel(Model):
     """A model with some number of agents."""
