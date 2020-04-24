@@ -16,7 +16,7 @@ class Neighborhood(Model):
     """A model of a neighborhood with some number of agents."""
 
     def __init__(self, N=10, width=None, height=None):
-        ''' Neighborhood: a neighborhood containing people
+        """ Neighborhood: a neighborhood containing people
 
             Parameters
             ----------
@@ -26,7 +26,7 @@ class Neighborhood(Model):
                 width of the (rectangular) neighborhood area
             height:
                 height of the (rectangular) neighborhood area
-        '''
+        """
         super().__init__()
         
         self.num_agents = N
@@ -46,20 +46,20 @@ class Neighborhood(Model):
             print(a, a.level_of_infection)
             self.schedule.add(a)
 
-            # adding the agent to a random position in the nbhd
+            # adding the agent to a random position in the neighborhood
             (x, y) = random.random() * self.width, random.random() * self.height
             self.grid.place_agent(a, (int(x), int(y)))
 
     def step(self):
-        '''Advance the model by one step.'''
+        """Advance the model by one step."""
 
         self.schedule.step()
 
     def get_neighbors(self, person, radius=1):
-        ''' get neighbors of person '''
-        nbrobjects = self.grid.get_cell_list_contents([person.pos])
+        """ get neighbors of person """
+        neighbor_objects = self.grid.get_cell_list_contents([person.pos])
         return [*filter(lambda x: type(x) is Person and x is not person, 
-                        nbrobjects)]
+                        neighbor_objects)]
 
     def move_agent(self, *args, **kwargs):
         return self.grid.move_agent(*args, **kwargs)

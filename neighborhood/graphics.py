@@ -15,4 +15,4 @@ def agent_repr(agent):
 
 
 def make_canvas(w, h, w_=512, h_=512):
-	return CanvasGrid(agent_repr, w, h, w_, h_)
+    return CanvasGrid(agent_repr, w, h, w_, h_)

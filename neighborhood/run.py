@@ -41,20 +41,22 @@ plt.colorbar()
 plt.show()
 '''
 
+
 def main(args):
-    ''' main method '''
+    """ main method """
     canvas = make_canvas(args.width, args.height)
     server = ModularServer(Neighborhood, [canvas], 'title',
-                           {'N': args.numpeople, 
-                            'width': args.width, 
+                           {'N': args.numpeople,
+                            'width': args.width,
                             'height': args.height})
-	
+
     server.port = 8000
     server.launch()
 
+
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('-n', '--numpeople', type=int, default=10, 
+    parser.add_argument('-n', '--numpeople', type=int, default=10,
                         help='number of agents in the simulation')
     parser.add_argument('--width', type=int, default=10)
     parser.add_argument('--height', type=int, default=10)
