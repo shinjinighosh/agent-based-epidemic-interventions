@@ -6,14 +6,14 @@ import numpy as np
 from argparse import ArgumentParser
 
 # local imports
-from CoronaModel import Nbhd
+from CoronaModel import Neighborhood
 from graphics import make_canvas, ModularServer
 
 '''
 all_infection_levels = []
 for j in range(100):
     # Run the model
-    model = Nbhd(10)
+    model = Neighborhood(10)
     for i in range(10):
         model.step()
 
@@ -26,7 +26,7 @@ for j in range(100):
 plt.hist(all_infection_levels, bins=range(int(max(all_infection_levels))+1))
 plt.show()
 
-grid_model = Nbhd(50, 10, 10)
+grid_model = Neighborhood(50, 10, 10)
 for i in range(20):
     print("step: %d" %(i))
     model.step()
@@ -44,7 +44,7 @@ plt.show()
 def main(args):
     ''' main method '''
     canvas = make_canvas(args.width, args.height)
-    server = ModularServer(Nbhd, [canvas], 'title',
+    server = ModularServer(Neighborhood, [canvas], 'title',
                            {'N': args.numpeople, 
                             'width': args.width, 
                             'height': args.height})

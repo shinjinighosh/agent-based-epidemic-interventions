@@ -12,11 +12,11 @@ from mesa.space import MultiGrid
 from Person import Person
 
 
-class Nbhd(Model):
+class Neighborhood(Model):
     """A model of a neighborhood with some number of agents."""
 
     def __init__(self, N=10, width=None, height=None):
-        ''' Nbhd: a neighborhood containing people
+        ''' Neighborhood: a neighborhood containing people
 
             Parameters
             ----------
