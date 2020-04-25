@@ -1,5 +1,3 @@
-
-
 import random
 
 
@@ -14,6 +12,6 @@ def recover_or_die(person):
     draw = 0
     if person.days >= 7:
         draw = random.triangular(0, 5, 3)
-        draw = round(draw/2.5)
+        draw = round(draw / 2.5)
 
     return draw

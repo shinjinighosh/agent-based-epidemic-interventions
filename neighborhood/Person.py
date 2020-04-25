@@ -60,7 +60,7 @@ class Person(Agent):
         # print(self.unique_id, "%.3f" % self.level_of_infection, end=';\t')
 
     def move(self):
-        if self.status == 3: return
+        if self.status == 3: return # because dead people do not move
         if self.status == 1: self.days += 1
 
         possible_steps = self.neighborhood.grid.get_neighborhood(
@@ -88,7 +88,7 @@ class Person(Agent):
     def update(self):
         """ update status and params """
 
-        if self.status == 2: return
+        if self.status in [2, 3]: return # because infected or dead people stay as they are
 
         self.status = 0 if self.level_of_infection == 0 else 1
 
