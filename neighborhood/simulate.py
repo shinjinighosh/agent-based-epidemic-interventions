@@ -30,8 +30,8 @@ if __name__ == '__main__':
     parser = ArgumentParser()
     parser.add_argument('-n', '--numpeople', type=int, default=10,
                         help='number of agents in the simulation')
-    parser.add_argument('--width', type=int, default=10)
-    parser.add_argument('--height', type=int, default=10)
+    parser.add_argument('--width', type=int, default=512)
+    parser.add_argument('--height', type=int, default=512)
 
     args = parser.parse_args()
     main(args)

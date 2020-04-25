@@ -63,7 +63,7 @@ class Person(Agent):
         if self.status == 3: return # because dead people do not move
         if self.status == 1: self.days += 1
 
-        possible_steps = self.neighborhood.grid.get_neighborhood(
+        possible_steps = self.neighborhood.get_neighborhood(
             self.pos,
             moore=True,
             include_center=True,
